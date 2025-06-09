@@ -4,11 +4,18 @@ import { useState } from "react";
 export default function Register() {
   const [user, setUser] = useState({});
   const [count, setCount] = useState(0);
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(0);
+  const [result, setResult] = useState();
   const handleClick = () => {
     alert("Hello World");
   };
   const updateCount = () => {
     setCount(count + 1);
+  };
+
+  const findSum = () => {
+    setResult(Number(a) + Number(b));
   };
   return (
     <div>
@@ -37,6 +44,7 @@ export default function Register() {
       <p>
         <button>Submit</button>
       </p>
+    
       <hr />
       <p>
         <Link to="/login">Aready a member? Login Here...</Link>
@@ -45,9 +53,19 @@ export default function Register() {
       <button onClick={handleClick}>Click</button>
       <hr />
       <p>
-        {count}<br></br>
+        {count}
+        <br></br>
         <button onClick={updateCount}>Update Count</button>
       </p>
+      <hr />
+      <p>
+        <input type="number" onChange={(e) => setA(e.target.value)} />
+      </p>
+      <p>
+        <input type="number" onChange={(e) => setB(e.target.value)} />
+      </p>
+      <button onClick={findSum}>Submit</button>
+      <p>{result}</p>
     </div>
   );
 }
