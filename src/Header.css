@@ -1,0 +1,9 @@
+.App-Headr-Row{
+    display: flex;
+    justify-content: space-between;
+    background-color: orange;
+}
+
+.App-Headr-Row div{
+    padding:10px;
+}
