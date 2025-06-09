@@ -1,14 +1,11 @@
-.App-Header-Row {
+.App-Footer-Row {
     display: flex;
     justify-content: space-between;
     background-color: orange;
 }
 
-.App-Header-Row div {
+.App-Footer-Row div {
     padding: 10px;
+    font-size: medium;
 }
 
-.App-Header-Row li {
-    display: inline-block;
-    padding: 5px;
-}
