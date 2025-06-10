@@ -1,21 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { AppContext } from "./App";
 export default function Register() {
   const [user, setUser] = useState({});
-  const [count, setCount] = useState(0);
-  const [a, setA] = useState(0);
-  const [b, setB] = useState(0);
-  const [result, setResult] = useState();
-  const handleClick = () => {
-    alert("Hello World");
-  };
-  const updateCount = () => {
-    setCount(count + 1);
-  };
-
-  const findSum = () => {
-    setResult(Number(a) + Number(b));
+  const Navigate = useNavigate()
+  const { users, setUsers } = useContext(AppContext);
+  const handleSubmit = () => {
+    setUsers([...users, user]);
+    Navigate("/login")
   };
   return (
     <div>
@@ -42,30 +35,12 @@ export default function Register() {
         />
       </p>
       <p>
-        <button>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </p>
-    
       <hr />
       <p>
         <Link to="/login">Aready a member? Login Here...</Link>
       </p>
-      <hr />
-      <button onClick={handleClick}>Click</button>
-      <hr />
-      <p>
-        {count}
-        <br></br>
-        <button onClick={updateCount}>Update Count</button>
-      </p>
-      <hr />
-      <p>
-        <input type="number" onChange={(e) => setA(e.target.value)} />
-      </p>
-      <p>
-        <input type="number" onChange={(e) => setB(e.target.value)} />
-      </p>
-      <button onClick={findSum}>Submit</button>
-      <p>{result}</p>
     </div>
   );
 }
