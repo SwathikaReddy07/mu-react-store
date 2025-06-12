@@ -28,7 +28,7 @@ function App() {
           <Header name="mu-react-store" />
           <Routes>
             <Route index element={<Product />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
