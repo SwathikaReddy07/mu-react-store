@@ -27,13 +27,14 @@ function App() {
         <BrowserRouter>
           <Header name="mu-react-store" />
           <Routes>
-            <Route index element={<Test />} />
-            <Route path="/" element={<Test />} />
+            <Route index element={<Product />} />
+            <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/order" element={<Order />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/product" element={<Product />} />
           </Routes>
           <Footer />
         </BrowserRouter>
