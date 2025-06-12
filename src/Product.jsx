@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 export default function Product() {    
     const [products,setProducts]=useState([]);
     const fetchProducts = async() =>{
-        const url="http://localhost:8080/products";
+        const url="http://localhost:8080/products"
         const res= await axios.get(url);
         setProducts(res.data)
     };
